@@ -1,0 +1,86 @@
+I"�<p>There were multiple languages used in the tasks.I didn’t know most of them but a little bit of googling and Youtube were a lot of help to me.</p>
+
+<h3 id="tasks-completed">Tasks Completed:</h3>
+
+<ol>
+  <li>Install Ubuntu</li>
+  <li>Star Me</li>
+  <li>Codeforces and Hackerrank</li>
+  <li>Ruby Scraper</li>
+  <li>Get it using Javascript</li>
+  <li>CLI app using Golang</li>
+  <li>Rusted Email</li>
+  <li>Captcha Breaking</li>
+  <li>Website Setup</li>
+  <li>A Pong Game</li>
+  <li>Python Source</li>
+  <li>Project Euler</li>
+  <li>Bandit</li>
+</ol>
+
+<h3 id="0-installing-ubuntu">0. Installing Ubuntu</h3>
+
+<p>In this task we were supposed to install ubuntu it was pretty straightforward but the encryption on the SSD was minor barrier as I had hard time disabling it.</p>
+
+<h3 id="1-star-me">1. Star Me</h3>
+
+<p>In this task we were supposed to star the amfoss repositories.To help us for the task we were given a script for the same.</p>
+
+<blockquote>
+  <p>In this task I learned the console in the inspect element of our browser.</p>
+</blockquote>
+
+<h3 id="2-codeforces-and-hackkerank">2. Codeforces and Hackkerank</h3>
+
+<p>This task got me more familiar to the python syntax as some of them required lists etc.Some of them also required maths logic.</p>
+
+<blockquote>
+  <p>In this task I learned about different type of errors you get while solving such question.Most common error while submitting was the runtime error which sometimes required me to re-think my logic.</p>
+</blockquote>
+
+<h3 id="3-ruby-scraper">3. Ruby Scraper</h3>
+
+<p>This task was about scraping the google search result and showing them.So for this task we required some ruby “gems”(which was essentially libraries in python).So I gem installed all the gems individually to later learning that you can install all of them by using a GEMFILE.The gems I used for the task was nokogiri,byebug,HTTParty</p>
+
+<blockquote>
+  <p>In this task I learned about ruby syntax.The byebug gem was also an helpful gem as it helped in quickly finding the CSS element required to scrape google</p>
+</blockquote>
+
+<h3 id="4-get-it-using-javascript">4. Get it using javascript</h3>
+
+<p>In this task we were required to fetch the information of a github user by taking username as input we were required to make a html page for the same.This task was the hardest as graphql being a new api there was nothing about it except the official documentation.The main thing was making the query as it is a query language</p>
+
+<blockquote>
+  <p>In this task I learned about graphql and getelementbyid in html.</p>
+</blockquote>
+
+<h3 id="5-cli-app-using-golang">5. CLI app using Golang</h3>
+
+<p>In this task we were to make CLI app using go.In this the task the hardest part was for me to learn Golang specifically how to use API with it.The part to put the output in the text file was also a big problem for me as the twitter API gives you information in some unknown data type which was first to be converted to string.</p>
+
+<blockquote>
+  <p>In this task I learned about Golang and the twitter API usage in Golang</p>
+</blockquote>
+
+<h3 id="6-rusted-email">6. Rusted Email</h3>
+
+<p>In this task we were supposed to tell if the the email entered was valid or not using regex.Firstly I had to understand what regex was which was aided by youtube tutorials.The string input part was also hard to grasp.</p>
+
+<blockquote>
+  <p>In this task I learned about the basic syntax of rust,also about regex</p>
+</blockquote>
+
+<h3 id="7-captcha-breaking">7. Captcha Breaking</h3>
+
+<p>In this task we were supposed to extract basic text from an image.So for this task I thought of using the computer vision library but stumbled on the tesseract while researching on it.Tesseract ocr is basically the result of a well trained machine learning algorithm.</p>
+
+<blockquote>
+  <p>In this task I learned about tesseract ocr</p>
+</blockquote>
+
+<h3 id="8-pong-game">8. Pong Game</h3>
+
+<p>in this task we were supposed to</p>
+
+<p><a href="https://github.com/Anantk2908/amfoss-tasks">Check out the repo</a>.</p>
+:ET

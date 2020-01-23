@@ -1,54 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-  <meta name="generator" content="Jekyll">
-
-  <title>amFoss Tasks</title>
-
-  <link rel="stylesheet" href="/css/main.css">
-  
-  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>amFoss Tasks | Anant’s-Blog</title>
-<meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="amFoss Tasks" />
-<meta name="author" content="Anant Kumar" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="There were multiple languages used in the tasks.I didn’t know most of them but a little bit of googling and Youtube were a lot of help to me." />
-<meta property="og:description" content="There were multiple languages used in the tasks.I didn’t know most of them but a little bit of googling and Youtube were a lot of help to me." />
-<link rel="canonical" href="http://localhost:8000/Yet-Another-Sample-Page" />
-<meta property="og:url" content="http://localhost:8000/Yet-Another-Sample-Page" />
-<meta property="og:site_name" content="Anant’s-Blog" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-01-05T00:00:00+05:30" />
-<script type="application/ld+json">
-{"headline":"amFoss Tasks","dateModified":"2020-01-05T00:00:00+05:30","datePublished":"2020-01-05T00:00:00+05:30","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:8000/Yet-Another-Sample-Page"},"url":"http://localhost:8000/Yet-Another-Sample-Page","author":{"@type":"Person","name":"Anant Kumar"},"description":"There were multiple languages used in the tasks.I didn’t know most of them but a little bit of googling and Youtube were a lot of help to me.","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-
-</head>
-
-<body>
-  <div id="wrapper">
-    <header>
-  <div>
-    <a href="/">
-    
-    <h1>anant@home:~$</h1>
-    </a>
-    <div class="header-links">
-      <a href="/archive"><h2 class="header-link">Archive</h2></a>
-<a href="/about"><h2 class="header-link">About</h2></a>
-<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
-    </div>
-  </div>
-</header>
-    <div class="container">
-      <section id="main_content">
-        <article>
-  <h2>amFoss Tasks</h2>
-  <time datetime="2020-01-05T00:00:00+05:30" class="by-line">05 Jan 2020</time>
-  <p>There were multiple languages used in the tasks.I didn’t know most of them but a little bit of googling and Youtube were a lot of help to me.</p>
+I"8<p>There were multiple languages used in the tasks.I didn’t know most of them but a little bit of googling and Youtube were a lot of help to me.</p>
 
 <h3 id="tasks-completed">Tasks Completed:</h3>
 
@@ -70,7 +20,7 @@
 
 <h3 id="0-installing-ubuntu">0. Installing Ubuntu</h3>
 
-<p><a href="/home/anant/Desktop/photos/ubuntu.png"></a></p>
+<p><img src="/home/anant/Desktop/photos/ubuntu.png" alt="" /></p>
 
 <p>In this task we were supposed to install ubuntu it was pretty straightforward but the encryption on the SSD was minor barrier as I had hard time disabling it.</p>
 
@@ -171,24 +121,4 @@
 </blockquote>
 
 <p><a href="https://github.com/Anantk2908/amfoss-tasks">Check out the repo</a>.</p>
-
-</article>
-      </section>
-    </div>
-  </div>
-
-   <footer>
-  <a href="https://github.com/Anantk2908">
-    <span>
-        <b>Anant</b>
-    </span>
-    
-    <span>© 2020</span>
-  </a>
-</footer>
-
-
-  
-</body>
-
-</html>
+:ET
