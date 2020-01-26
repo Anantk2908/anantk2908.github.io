@@ -1,5 +1,5 @@
 ---
-title: amFoss Tasks
+title: amFOSS Tasks
 published: true
 ---
 
