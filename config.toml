@@ -1,0 +1,83 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "My Blog"
+theme = "hugo-ink"
+themesDir = "themes"
+paginate = 5
+
+#copyright = "© Copyright notice"
+
+pygmentsstyle = "vs"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+googleAnalytics = "UA-123-45"
+disqusShortname = "ink-demo"
+
+[params]
+	subtitle = "A collection of all my works"
+
+	# Optional 64x64 avatar image.
+	avatar = "https://numpaints.com/wp-content/uploads/2021/02/astronaut-tintin-paint-by-number.jpg"
+
+	# Content types to disable Disqus on.
+	disableDisqusTypes = ["page"]
+	
+	featherIconsCDN = true
+
+	mode = "auto" # "dark" or "auto"
+	# customCSS = "css/custom.css"  # Custom CSS applied to default styles.
+	# customDarkCSS = "css/custom-dark.css"  # Custom styles applied to dark mode css.
+	# customJS = ["js/custom.js", "js/custom1.js"]  # Custom JS scripts.
+
+# Nav.
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "All posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 3
+
+[[menu.main]]
+name = "CV"
+url = "https://drive.google.com/file/d/1fJdofCSpGolStYEf08_zWOT02h03vwzV/view?usp=sharing"
+weight = 4
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 5
+
+[[params.social]]
+name = "Github"
+icon = "github"
+url = "https://github.com/Anantk2908"
+
+[[params.social]]
+name = "Github"
+icon = "twitter"
+url = "https://twitter.com/Anantk2908"
+
+
+[[params.social]]
+name = "Github"
+icon = "linkedin"
+url = "https://www.linkedin.com/in/anant-kumar-3a4a90194/"
+
+
+
+[[params.social]]
+name = "RSS"
+icon = "rss"
+url = "/index.xml"
+
+[taxonomies]
+   tag = "tags"
