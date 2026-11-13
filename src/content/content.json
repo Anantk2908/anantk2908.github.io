@@ -1,0 +1,213 @@
+{
+  "_readme": "All site copy lives in this file. Text that starts with [ADD: is a placeholder: the site shows it with a dashed outline until you replace it. Leave a field as an empty string to hide it.",
+
+  "meta": {
+    "name": "Anant Kumar",
+    "title": "Anant Kumar, AI engineer",
+    "description": "AI engineer. 55+ client pilots at IBM, 16 of 24 converted to paid work in the first year. Now studying for an MS in Computer Science at NYU Courant. Agents, retrieval and fine-tuned models that turn vague asks into exact outputs.",
+    "ogImageAlt": "A struck-through vague sentence above the exact one: AI engineer. 55+ client pilots. 16 of 24 converted in year one."
+  },
+
+  "contact": {
+    "email": "ak10760@nyu.edu",
+    "location": "New York, NY",
+    "linkedin": { "label": "LinkedIn", "handle": "linkedin.com/in/anantkumar-ai", "url": "https://www.linkedin.com/in/anantkumar-ai" },
+    "github": { "label": "GitHub", "handle": "github.com/Anantk2908", "url": "https://github.com/Anantk2908" },
+    "resume": { "label": "Resume (PDF)", "file": "resume/Anant_Kumar_Resume.pdf" }
+  },
+
+  "nav": {
+    "skipToContent": "Skip to content",
+    "skipToExact": "Skip to the exact version"
+  },
+
+  "hero": {
+    "vague": "I do, sort of, AI things for big companies?",
+    "exact": ["AI engineer.", "55+ client pilots.", "16 of 24 converted in year one."],
+    "intro": "I'm Anant Kumar. People bring me a loose sentence about what they want, and I hand back something exact: Java that compiles, a test step precise enough to automate, an answer in under three seconds. I did that for three years at IBM. I'm now in New York, studying for an MS in Computer Science at NYU Courant.",
+    "lookingFor": "Open to Summer 2027 internships."
+  },
+
+  "pairs": {
+    "heading": "Six asks, six outputs",
+    "intro": "Each project below began as a loose request. The asks on the left are my paraphrase of how such projects start, not client quotes. The outputs on the right are what I built, with the numbers I can stand behind.",
+    "hint": "Each output starts out of focus and sharpens as you reach it. Drag the yellow line to pull it in or out of focus yourself.",
+    "askLabel": "The ask",
+    "askNote": "illustrative",
+    "outputLabel": "The output",
+    "sliderLabel": "Focus line for",
+    "items": [
+      {
+        "id": "cobol-to-java",
+        "ask": "We have a lot of COBOL. Can AI make it Java?",
+        "title": "~250 COBOL files migrated to Java, about 75% compiling without manual fixes.",
+        "body": "I fine-tuned Llama 3.1 70B with QLoRA to migrate COBOL to Java for major Japanese automotive and electronics firms. About 75% of the files compiled without manual fixes before human review, and client feedback guided the tuning.",
+        "facts": ["~250 COBOL files", "~75% compiled without manual fixes", "Llama 3.1 70B, fine-tuned with QLoRA"],
+        "context": "IBM Client Engineering"
+      },
+      {
+        "id": "test-steps",
+        "ask": "The test steps are all written down. They just need to be clearer.",
+        "title": "Hundreds of ambiguous test steps rewritten as precise ones, ready to become Playwright tests.",
+        "body": "I built LangGraph agents that turned hundreds of ambiguous test steps for a client's web app into precise ones. Three RAG pipelines gave them context from PDF documents, transcribed videos and source files. I then architected the next stage, which turns the refined steps into Playwright tests, and guided the leads who built it.",
+        "facts": ["3 RAG pipelines", "~300 PDF pages", "30+ transcribed videos", "100+ source files"],
+        "context": "IBM Consulting"
+      },
+      {
+        "id": "financial-qa",
+        "ask": "It's in the financial statements somewhere. Nobody has time to look.",
+        "title": "Question answering over 10K+ pages of financial statements: ~90% accuracy, under 3 s per answer.",
+        "body": "A RAG system using hybrid search, with Milvus vector search and Elasticsearch BM25 side by side, followed by a reranker. Accuracy was measured on 100+ test questions.",
+        "facts": ["10K+ pages", "~90% accuracy on 100+ test questions", "Under 3 s per answer", "Milvus + Elasticsearch BM25 + reranker"],
+        "context": "IBM Client Engineering"
+      },
+      {
+        "id": "airline-scheduling",
+        "ask": "Could the planners just tell it what changed and run it again?",
+        "title": "A scheduling model that planners re-solve by changing constraints in plain language.",
+        "body": "I built a multi-agent layer with LangGraph and Granite over a major U.S. airline's CPLEX scheduling model. Planners change constraints in plain language and re-solve. I packaged it as a reusable demo for IBM sellers.",
+        "facts": ["LangGraph + Granite", "CPLEX scheduling model", "Reusable demo for IBM sellers"],
+        "context": "IBM Client Engineering"
+      },
+      {
+        "id": "molecules",
+        "ask": "We need new candidate molecules. Can a model propose some?",
+        "title": "An app that generates candidate molecules as SMILES strings.",
+        "body": "I created an app on IBM's SMI-TED foundation model that generates candidate molecules (SMILES) for a major Japanese materials company. I wrote its tests and its Tekton CI/CD pipelines, and it became a reusable IBM asset.",
+        "facts": ["IBM SMI-TED foundation model", "Tests and Tekton CI/CD", "Reusable IBM asset"],
+        "context": "IBM Client Engineering"
+      },
+      {
+        "id": "image-search",
+        "ask": "I want to type what I'm looking for and get the right photo.",
+        "title": "Natural-language image search for a public-sector client.",
+        "body": "I fine-tuned Detectron to tag images and used GPT-3 to turn each query into JSON keywords, which were matched against those tags with full matches ranked first.",
+        "facts": ["Detectron for image tags", "GPT-3 for query to JSON keywords", "Full matches first"],
+        "context": "Jio Platforms, internship"
+      }
+    ]
+  },
+
+  "stillVague": {
+    "heading": "Still vague",
+    "intro": "One question I haven't finished answering. It's my current research project.",
+    "askLabel": "The question",
+    "askNote": "open",
+    "ask": "Which functions should a coding agent actually read?",
+    "outputLabel": "The method so far",
+    "title": "Learned AST Pruning for Coding Agents",
+    "stack": "PyTorch, Hugging Face, tree-sitter, MCP",
+    "body": [
+      "I'm building a 125M-parameter ranker (UniXcoder, contrastive InfoNCE loss) that picks which Python functions a coding agent sees under a token budget. Each AST node is kept whole, kept as a signature, or dropped.",
+      "It trains on gold-patch labels from SWE-bench and SWE-Gym, about 21K issues. I'm benchmarking gold-function recall on SWE-bench Lite against BM25, LongCodeZip and SWE-Pruner, and serving the ranker to agents as an MCP server."
+    ],
+    "facts": ["125M-parameter ranker", "~21K training issues", "Served as an MCP server"],
+    "resultsLabel": "Results",
+    "resultsNote": "Not in yet. This part stays out of focus until they are.",
+    "link": { "label": "Code on GitHub", "url": "https://github.com/Anantk2908/learned-ast-pruning" }
+  },
+
+  "exact": {
+    "heading": "The exact version",
+    "intro": "Everything above, without the fog.",
+    "record": {
+      "heading": "Record",
+      "items": [
+        "55+ client pilots delivered in 2.5 years at IBM Client Engineering.",
+        "16 of 24 first-year pilots converted to paid IBM engagements.",
+        "2024 Growth Award for the most pilot conversions."
+      ]
+    },
+    "experience": {
+      "heading": "Experience",
+      "items": [
+        {
+          "dates": "Jan 2026 – Aug 2026",
+          "role": "Business Transformation Consultant",
+          "org": "IBM Consulting, Bengaluru",
+          "summary": "LangGraph agents and three RAG pipelines that made a client's test steps precise. Architected the Playwright stage that followed and guided the leads who built it."
+        },
+        {
+          "dates": "Aug 2023 – Dec 2025",
+          "role": "AI Engineer",
+          "org": "IBM Client Engineering, Bengaluru",
+          "summary": "55+ client pilots, running technical discovery with Japanese clients. Fine-tuning for COBOL-to-Java migration, multi-agent systems over a CPLEX scheduling model, RAG over financial statements, and a molecule generator on SMI-TED."
+        },
+        {
+          "dates": "Feb 2023 – Aug 2023",
+          "role": "Software Engineer Intern",
+          "org": "IBM India Software Labs, Bengaluru",
+          "summary": "Trained an image-captioning model on Flickr8k with a ViT encoder and a GPT-2 decoder."
+        },
+        {
+          "dates": "Dec 2022 – Jan 2023",
+          "role": "Software Engineer Intern",
+          "org": "Jio Platforms, India",
+          "summary": "Built natural-language image search for a public-sector client. Automated first-round interview screening for sales hiring: Whisper transcribed the answers, GPT-3 summarized them against the interview questions, and HR made the final call."
+        }
+      ]
+    },
+    "education": {
+      "heading": "Education",
+      "items": [
+        {
+          "dates": "Expected May 2028",
+          "role": "Master of Science, Computer Science",
+          "org": "New York University, Courant Institute",
+          "summary": "Coursework: Fundamental Algorithms; Intro to Deep Learning and LLM-based Generative AI Systems."
+        },
+        {
+          "dates": "2023",
+          "role": "Bachelor of Technology, Computer Engineering",
+          "org": "Amrita Vishwa Vidyapeetham",
+          "summary": "GPA 8.10/10."
+        }
+      ]
+    },
+    "projects": {
+      "heading": "Projects",
+      "items": [
+        {
+          "name": "Learned AST Pruning for Coding Agents",
+          "stack": "PyTorch, Hugging Face, tree-sitter, MCP",
+          "summary": "In progress. A 125M-parameter ranker that decides which Python functions a coding agent sees under a token budget, trained on about 21K issues from SWE-bench and SWE-Gym.",
+          "link": { "label": "Code on GitHub", "url": "https://github.com/Anantk2908/learned-ast-pruning" }
+        },
+        {
+          "name": "SummarizeTube",
+          "stack": "React.js, FastAPI, Ollama, Whisper",
+          "summary": "A fully local YouTube summarizer running Mistral-Small and Whisper. It transcribes only when captions are missing, answers questions across a whole playlist with RAG, and shares VRAM between the models. About 2 minutes per hour of video.",
+          "link": { "label": "Code on GitHub", "url": "https://github.com/Anantk2908/SummarizeTube" }
+        }
+      ]
+    },
+    "skills": {
+      "heading": "Skills",
+      "groups": [
+        { "name": "Languages and databases", "items": "Python, Java, SQL, JavaScript, PostgreSQL, MySQL, Milvus, Elasticsearch" },
+        { "name": "AI and ML", "items": "Large language models, fine-tuning (QLoRA), retrieval-augmented generation, multi-agent systems, hybrid retrieval, contrastive learning, NLP, computer vision, deep learning" },
+        { "name": "Frameworks", "items": "PyTorch, Hugging Face Transformers, TensorFlow, LangChain, LangGraph, CrewAI, FastAPI, React.js" },
+        { "name": "Cloud and DevOps", "items": "IBM Cloud, watsonx.ai, watsonx Orchestrate, AWS, GCP, Docker, Kubernetes, CI/CD (Tekton), Git" }
+      ]
+    }
+  },
+
+  "contactSection": {
+    "heading": "Send me the vague version",
+    "body": "If you have a loose idea of what you need built, that's enough to start a conversation.",
+    "emailLabel": "Email",
+    "locationLabel": "Based in"
+  },
+
+  "footer": {
+    "note": "The asks on this page are illustrative. Every number comes from my resume."
+  },
+
+  "notFound": {
+    "title": "Page not found",
+    "vague": "It was around here somewhere?",
+    "exact": ["404.", "This page doesn't exist."],
+    "body": "The address may be mistyped, or the page may have moved.",
+    "homeLabel": "Go to the home page"
+  }
+}

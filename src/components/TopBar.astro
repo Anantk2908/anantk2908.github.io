@@ -1,0 +1,22 @@
+---
+import { content } from "../lib/site";
+
+interface Props {
+  assetRoot?: string;
+  homeHref?: string;
+}
+const { assetRoot = "./", homeHref = "#top" } = Astro.props;
+const { contact, meta } = content;
+---
+
+<header class="bar">
+  <div class="wrap bar-inner">
+    <a class="bar-name" href={homeHref}>{meta.name}</a>
+    <nav class="bar-links" aria-label="Quick links">
+      <a href={`${assetRoot}${contact.resume.file}`}>{contact.resume.label}</a>
+      <a href={`mailto:${contact.email}`}>Email</a>
+      <a class="bar-secondary" href={contact.github.url} rel="me">{contact.github.label}</a>
+      <a class="bar-secondary" href={contact.linkedin.url} rel="me">{contact.linkedin.label}</a>
+    </nav>
+  </div>
+</header>

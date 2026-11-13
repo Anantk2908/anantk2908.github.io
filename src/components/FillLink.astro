@@ -1,0 +1,18 @@
+---
+// A link from the content file. Until its URL is filled in, the placeholder
+// text is shown instead of a dead link.
+import { isPlaceholder } from "../lib/site";
+
+interface Props {
+  link: { label: string; url: string };
+}
+const { link } = Astro.props;
+---
+
+{
+  !link.url ? null : isPlaceholder(link.url) ? (
+    <span class="todo">{link.url}</span>
+  ) : (
+    <a href={link.url}>{link.label}</a>
+  )
+}

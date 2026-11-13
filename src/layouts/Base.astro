@@ -1,0 +1,84 @@
+---
+import "../styles/global.css";
+import focusScript from "../scripts/focus.js?raw";
+import { content, absoluteUrl } from "../lib/site";
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** Path of this page on the site, used for the canonical URL. */
+  path?: string;
+  /** Prefix for fonts, favicon and files. "./" keeps the home page relative. */
+  assetRoot?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = content.meta.title,
+  description = content.meta.description,
+  path = "",
+  assetRoot = "./",
+  noindex = false,
+} = Astro.props;
+
+const fonts = [
+  { file: "instrument-serif-italic.woff2", css: `font-family:"Instrument Serif";font-style:italic;font-weight:400;` },
+  { file: "martian-mono-var.woff2", css: `font-family:"Martian Mono";font-style:normal;font-weight:100 800;font-stretch:75% 112.5%;` },
+  { file: "hanken-grotesk-var.woff2", css: `font-family:"Hanken Grotesk";font-style:normal;font-weight:100 900;` },
+];
+
+const fontFaces = fonts
+  .map((f) => `@font-face{${f.css}font-display:swap;src:url("${assetRoot}fonts/${f.file}") format("woff2");}`)
+  .join("");
+
+const person = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: content.meta.name,
+  jobTitle: "AI engineer",
+  url: absoluteUrl(),
+  sameAs: [content.contact.linkedin.url, content.contact.github.url],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="canonical" href={absoluteUrl(path)} />
+    <meta name="theme-color" content="#dde3e6" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={content.meta.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={absoluteUrl(path)} />
+    <meta property="og:image" content={absoluteUrl("og.jpg")} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={content.meta.ogImageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href={`${assetRoot}favicon.svg`} type="image/svg+xml" />
+    <link rel="icon" href={`${assetRoot}favicon-32.png`} sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href={`${assetRoot}apple-touch-icon.png`} />
+
+    {fonts.map((f) => (
+      <link rel="preload" href={`${assetRoot}fonts/${f.file}`} as="font" type="font/woff2" crossorigin />
+    ))}
+    <style is:inline set:html={fontFaces}></style>
+    <script is:inline>
+      document.documentElement.classList.add("js");
+    </script>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(person)}></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">{content.nav.skipToContent}</a>
+    <slot />
+    <script is:inline set:html={focusScript}></script>
+  </body>
+</html>

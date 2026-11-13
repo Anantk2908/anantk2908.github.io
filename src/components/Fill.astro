@@ -1,0 +1,12 @@
+---
+// Prints a piece of copy. If it is still a placeholder such as
+// "[ADD: demo link]", it is shown with a dashed outline so it can't be missed.
+import { isPlaceholder } from "../lib/site";
+
+interface Props {
+  value: string;
+}
+const { value } = Astro.props;
+---
+
+{isPlaceholder(value) ? <span class="todo">{value}</span> : value}

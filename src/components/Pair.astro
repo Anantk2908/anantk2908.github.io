@@ -1,0 +1,41 @@
+---
+// One ask-and-output pair. The output goes in the default slot.
+interface Props {
+  id: string;
+  askLabel: string;
+  askNote: string;
+  ask: string;
+  sliderLabel: string;
+}
+const { id, askLabel, askNote, ask, sliderLabel } = Astro.props;
+---
+
+<article class="pair" id={id}>
+  <div class="ask">
+    <p class="label">{askLabel} <span class="note">({askNote})</span></p>
+    <p class="ask-text">{ask}</p>
+  </div>
+  <div class="out" data-focus>
+    <div class="out-body">
+      <slot />
+    </div>
+    <div class="veil" aria-hidden="true"></div>
+    <div
+      class="focus-line"
+      role="slider"
+      tabindex="0"
+      aria-label={sliderLabel}
+      aria-orientation="horizontal"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      aria-valuenow="100"
+      aria-valuetext="In focus"
+    >
+      <span class="grip" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 4 2.5 8 6 12M10 4l3.5 4L10 12"></path>
+        </svg>
+      </span>
+    </div>
+  </div>
+</article>

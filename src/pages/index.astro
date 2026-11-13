@@ -1,0 +1,207 @@
+---
+import Base from "../layouts/Base.astro";
+import TopBar from "../components/TopBar.astro";
+import Pair from "../components/Pair.astro";
+import Fill from "../components/Fill.astro";
+import FillLink from "../components/FillLink.astro";
+import { content, words } from "../lib/site";
+
+const { hero, pairs, stillVague, exact, contact, contactSection, footer, nav } = content;
+const heroLines = words(hero.exact);
+---
+
+<Base>
+  <TopBar />
+
+  <main id="content">
+    <section class="hero wrap" id="top" aria-labelledby="hero-title">
+      <p class="hero-vague" aria-hidden="true">{hero.vague}</p>
+      <h1 class="hero-exact" id="hero-title" aria-label={hero.exact.join(" ")}>
+        {
+          heroLines.map((line) => (
+            <span class="line" aria-hidden="true">
+              {line.map((w, n) => (
+                <>
+                  <span class="w" style={`--i:${w.i}`}>{w.word}</span>
+                  {n < line.length - 1 ? " " : ""}
+                </>
+              ))}
+            </span>
+          ))
+        }
+      </h1>
+
+      <div class="hero-rest">
+        <p class="hero-intro">{hero.intro}</p>
+        {hero.lookingFor && <p class="hero-looking"><Fill value={hero.lookingFor} /></p>}
+        <p class="hero-actions">
+          <a class="button" href={`./${contact.resume.file}`}>{contact.resume.label}</a>
+          <a href={`mailto:${contact.email}`}>{contact.email}</a>
+          <a href="#exact">{nav.skipToExact}</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section wrap" aria-labelledby="pairs-title">
+      <div class="section-head">
+        <h2 id="pairs-title">{pairs.heading}</h2>
+        <p>{pairs.intro}</p>
+        <p class="hint">{pairs.hint}</p>
+      </div>
+
+      {
+        pairs.items.map((item) => (
+          <Pair
+            id={item.id}
+            askLabel={pairs.askLabel}
+            askNote={pairs.askNote}
+            ask={item.ask}
+            sliderLabel={`${pairs.sliderLabel}: ${item.title}`}
+          >
+            <p class="label">{pairs.outputLabel}</p>
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+            <ul class="facts">
+              {item.facts.map((fact) => <li>{fact}</li>)}
+            </ul>
+            <p class="context">{item.context}</p>
+          </Pair>
+        ))
+      }
+    </section>
+
+    <section class="section wrap" aria-labelledby="still-vague-title">
+      <div class="section-head">
+        <h2 id="still-vague-title">{stillVague.heading}</h2>
+        <p>{stillVague.intro}</p>
+      </div>
+
+      <Pair
+        id="ast-pruning"
+        askLabel={stillVague.askLabel}
+        askNote={stillVague.askNote}
+        ask={stillVague.ask}
+        sliderLabel={`${pairs.sliderLabel}: ${stillVague.title}`}
+      >
+        <p class="label">{stillVague.outputLabel}</p>
+        <h3>{stillVague.title}</h3>
+        {stillVague.body.map((paragraph) => <p>{paragraph}</p>)}
+        <ul class="facts">
+          {stillVague.facts.map((fact) => <li>{fact}</li>)}
+        </ul>
+        <p class="context">{stillVague.stack}</p>
+        <div class="results">
+          <p class="label">{stillVague.resultsLabel}</p>
+          <div class="results-lines" aria-hidden="true"><span></span><span></span><span></span></div>
+          <p class="results-note">{stillVague.resultsNote}</p>
+        </div>
+        <p class="link-row"><FillLink link={stillVague.link} /></p>
+      </Pair>
+    </section>
+
+    <section class="exact" id="exact" aria-labelledby="exact-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="exact-title">{exact.heading}</h2>
+          <p>{exact.intro}</p>
+        </div>
+
+        <div class="exact-block">
+          <h3>{exact.record.heading}</h3>
+          <ul class="record">
+            {exact.record.items.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+
+        <div class="exact-block">
+          <h3>{exact.experience.heading}</h3>
+          <div class="rows">
+            {
+              exact.experience.items.map((job) => (
+                <div class="row">
+                  <p class="row-dates">{job.dates}</p>
+                  <div>
+                    <p class="row-title">{job.role}</p>
+                    <p class="row-org">{job.org}</p>
+                    <p class="row-summary">{job.summary}</p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="exact-block">
+          <h3>{exact.education.heading}</h3>
+          <div class="rows">
+            {
+              exact.education.items.map((school) => (
+                <div class="row">
+                  <p class="row-dates">{school.dates}</p>
+                  <div>
+                    <p class="row-title">{school.role}</p>
+                    <p class="row-org">{school.org}</p>
+                    <p class="row-summary">{school.summary}</p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="exact-block">
+          <h3>{exact.projects.heading}</h3>
+          <div class="rows">
+            {
+              exact.projects.items.map((project) => (
+                <div class="row">
+                  <p class="row-dates">{project.stack}</p>
+                  <div>
+                    <p class="row-title">{project.name}</p>
+                    <p class="row-summary">{project.summary}</p>
+                    <p class="row-link"><FillLink link={project.link} /></p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="exact-block">
+          <h3>{exact.skills.heading}</h3>
+          <dl class="skills">
+            {
+              exact.skills.groups.map((group) => (
+                <div>
+                  <dt>{group.name}</dt>
+                  <dd>{group.items}</dd>
+                </div>
+              ))
+            }
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <h2 id="contact-title">{contactSection.heading}</h2>
+        <p class="contact-body">{contactSection.body}</p>
+        <a class="contact-email" href={`mailto:${contact.email}`}>{contact.email}</a>
+        <ul class="contact-list">
+          <li><a href={`./${contact.resume.file}`}>{contact.resume.label}</a></li>
+          <li><a href={contact.linkedin.url} rel="me">{contact.linkedin.handle}</a></li>
+          <li><a href={contact.github.url} rel="me">{contact.github.handle}</a></li>
+          <li>{contactSection.locationLabel} {contact.location}</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>{footer.note}</p>
+      <p><a href="#top">Back to top</a></p>
+    </div>
+  </footer>
+</Base>
